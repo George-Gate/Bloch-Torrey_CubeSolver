@@ -1,9 +1,10 @@
 clear; clc;
 
+warning off;
 spp = load(['dataSet' filesep 'sweepPumpPower' filesep 'sweepPumpPower 20250626_170731.mat']);   % numBasis = 100, Rrel=1/(100us), w/L=0.4
 sqg = load(['dataSet' filesep 'sweepQuadraticGradient' filesep 'sweepQuadraticGradient 20230417_012656.mat']);   % numBasis = 200
 sct = load(['dataSet' filesep 'sweepCellTemperature' filesep 'sweepCellTemperature_v2 20250626_171113.mat']);   % numBasis = 100, Rrel=1/(100us), w/L=0.4, Imax=50mW/cm^2
-
+warning on;
 
 % disp. pars. used in calculation
 % spp.cellPars_129

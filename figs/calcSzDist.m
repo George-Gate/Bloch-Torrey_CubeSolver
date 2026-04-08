@@ -68,7 +68,8 @@ getNumberDensity(110)
 % calc number density
 % use Killian formula, see https://csrc.yuque.com/sensing/basics/plmf5u
 function n = getNumberDensity(temp_degc)
-    kB_val = kB();    % function in OpticalPumping\const
+    % kB_val = kB();    % function in OpticalPumping\const
+    kB_val = 1.3806488e-23;%2010 CODATA: http://physics.nist.gov/cuu/Constants/ unit: J K-1
     T = temp_degc + 273.15;
     p = 10.^(  9.55 - 4132./T  );   % in unit of Pa
     n = p./(kB_val*T)/1e6;     % in unit of cm^-3
@@ -77,7 +78,8 @@ end
 % calc number density
 % use Daniel Adam Steck's Rubidium data, see https://csrc.yuque.com/sensing/basics/plmf5u
 function n = getNumberDensity2(temp_degc)
-    kB_val = kB();    % function in OpticalPumping\const
+    % kB_val = kB();    % function in OpticalPumping\const
+    kB_val = 1.3806488e-23;%2010 CODATA: http://physics.nist.gov/cuu/Constants/ unit: J K-1
     T = temp_degc + 273.15;
     p = 10.^(  9.318 - 4040./T  );   % in unit of Pa
     n = p./(kB_val*T)/1e6;     % in unit of cm^-3

@@ -13,8 +13,9 @@ The main package is located in the `isotopeShift_Simu` folder, while the `figs` 
 To run the codes, add the following folders to your MATLAB path:
 
 - `isotopeShift_Simu`
-- `isotopeShift_Simu/chebfun-master`
-- `isotopeShift_Simu/specialFuns`
+- `isotopeShift_Simu/external_packages/chebfun-master`
+- `isotopeShift_Simu/external_packages/crameri_perceptually_uniform_scientific_colormaps`
+- `isotopeShift_Simu/external_packages/specialFuns`
 
 For demonstrations, refer to the following example scripts:
 

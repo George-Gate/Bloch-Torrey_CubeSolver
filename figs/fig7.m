@@ -1,7 +1,9 @@
 clear; clc;
 
 %% load data
+warning off;
 load(['dataSet' filesep 'compare3_sweepPumpPower' filesep 'sweepPumpPower_v2 20250626_191458.mat']);
+warning on;
 
 %% calc. ½üËÆ½âÎöÊ½
 gS = 2;

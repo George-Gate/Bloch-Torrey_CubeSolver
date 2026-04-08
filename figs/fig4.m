@@ -40,8 +40,9 @@ axList{3,2} =  axes('InnerPosition', [x3, y2, WW, HH]);    hold on; box on; grid
 
 
 for iD = 1:3
-    
+    warning off;
     load([dataPath filesep dataList{iD}]);
+    warning on;
 
     a1 = {}; a3 = {};
     OD_list = {};
