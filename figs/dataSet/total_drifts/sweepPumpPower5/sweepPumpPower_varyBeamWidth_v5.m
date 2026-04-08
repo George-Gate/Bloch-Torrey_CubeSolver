@@ -63,7 +63,7 @@ fileName = sprintf('sweepPumpPower_varyBeamWidth_v5 L=%.2fcm %s', cellPars.L(1),
 w_L_list = linspace(0.2, 1.0, 100);
 % w_L_list = linspace(0.2, 1.0, 10);
 
-rel_dGamma = 1e-3;          % 计算dbA/dR_rel时使用的步长为 rel_dGamma*R_rel
+rel_dGamma = 2e-3;          % 计算dbA/dR_rel时使用的步长为 rel_dGamma*R_rel
 
 % aperture_list = 3.0;
 
@@ -172,8 +172,8 @@ u_Gamma = 2e-3; % Rrel的相对涨落
 
 xData = 1e3*P_beam_mat{1};
 yData = w_L_mat{1};
-% zData = {1e6*u_Gamma*dbA_dRrel_mat};
-zData = {zData_new{1}-zData_old{1}};
+zData = {1e6*u_Gamma*dbA_dRrel_mat};
+% zData = {zData_new{1}-zData_old{1}};
 zlabel_str = {['$\delta \Gamma \times \partial b_{\rm A}/\partial R_{\rm rel} $, ', sprintf('$\\delta \\Gamma = 2 \\times 10^{%g} R_{\\rm rel}$',log10(u_Gamma/2))]};
 unit_str = {'$(\rm fT)$'};
 
@@ -205,4 +205,4 @@ allTextbox = hf2.findobj('Type','textbox');
 set([allAxes;allLegend;allTextbox],'fontsize',font_sz);
 set([allLine;allErrorbar],'LineWidth',lw, 'MarkerSize', mkr_size);
 
-print(hf2, [fileName '_3.png'], '-dpng', '-r330');
+print(hf2, [fileName '_2.png'], '-dpng', '-r330');

@@ -63,8 +63,8 @@ fileName = sprintf('sweepPumpPower_varyBeamWidth_v4 L=%.2fcm %s', cellPars.L(1),
 w_L_list = linspace(0.2, 1.0, 100);
 % w_L_list = linspace(0.2, 1.0, 10);
 
-rel_dxc = 2e-4;             % 计算dbA/dxc时使用的步长为  rel_dxc*L 或 rel_dxc*4w，取较小值
-rel_dsigma = 2e-3;          % 计算dbA/dsigma_abs时使用的步长为 rel_dsigma*sigma_abs
+rel_dxc = 1e-4;             % 计算dbA/dxc时使用的步长为  rel_dxc*L 或 rel_dxc*4w，取较小值
+rel_dsigma = 1e-3;          % 计算dbA/dsigma_abs时使用的步长为 rel_dsigma*sigma_abs
 
 % aperture_list = 3.0;
 
@@ -199,10 +199,10 @@ delta_xc = 1e-4;  % xc涨落, cm
 
 xData = 1e3*P_beam_mat{1};
 yData = w_L_mat{1};
-% zData = {1e6*delta_xc*dbA_dxc_mat; ...
-%          1e3*(bA_mat_xc{1}+bA_mat_xc{2})/2;  ...
-%          1e6*u_sigma*dbA_dsigma_mat};
-zData = {zData_new{1}-zData_old{1};  zData_new{2}-zData_old{2};  zData_new{3}-zData_old{3}};
+zData = {1e6*delta_xc*dbA_dxc_mat; ...
+         1e3*(bA_mat_xc{1}+bA_mat_xc{2})/2;  ...
+         1e6*u_sigma*dbA_dsigma_mat};
+% zData = {zData_new{1}-zData_old{1};  zData_new{2}-zData_old{2};  zData_new{3}-zData_old{3}};
 zlabel_str = {['$\delta x \times \partial b_{\rm A}/\partial x_c$, ', sprintf('$\\delta x = %g~{\\rm \\mu m}$',1e4*delta_xc)];
               '$b_{\rm A}$';
               ['$\delta \sigma \times \partial b_{\rm A}/\partial \sigma_{\rm abs} $, ', sprintf('$\\delta \\sigma = 10^{%g} \\sigma_{\\rm abs}$',log10(u_sigma))]};
@@ -238,4 +238,4 @@ allTextbox = hf2.findobj('Type','textbox');
 set([allAxes;allLegend;allTextbox],'fontsize',font_sz);
 set([allLine;allErrorbar],'LineWidth',lw, 'MarkerSize', mkr_size);
 
-% print(hf2, [fileName '_2.png'], '-dpng', '-r330');
+print(hf2, [fileName '_2.png'], '-dpng', '-r330');

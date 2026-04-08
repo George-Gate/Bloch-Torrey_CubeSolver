@@ -6,7 +6,7 @@ g131 = +2*pi*3.515769e-3;  % rad/s/nT
 
 % define cell parameters
 cellPars = solver.cellPars_example;    % an example of cellPars structure is defined in the constructor of @CubeSolver2
-cellPars.L = 0.2*[1, 1, 1];
+cellPars.L = 0.2*[1, 1, 1];  % change L between [0.3, 0.5, 0.8] to generate the data in the article
 cellPars.D = 0.2;
 cellPars.D_alpha = 1;    % 扩散系数的温度依赖，D \propto T^alpha
 cellPars.OD = 6/0.8*cellPars.L(1); 

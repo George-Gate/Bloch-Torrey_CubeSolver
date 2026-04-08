@@ -22,7 +22,7 @@ cellPars_131.lambda = 2e-2*[1,1,1];
 cellPars_131.gXe = g131;
 cellPars_131.G2c = 1/20;      % 1/s
 
-w_L = 0.9;
+w_L = 1.0;   % change w_L between [0.2, 0.4, 1.0] to generate the data in the article
 
 pumpBeamProfile = struct();
 pumpBeamProfile.w = w_L*cellPars.L(1);
