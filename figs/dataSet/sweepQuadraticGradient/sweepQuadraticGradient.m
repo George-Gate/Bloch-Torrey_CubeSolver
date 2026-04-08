@@ -92,7 +92,7 @@ save([fileName '.mat'], 'result', 'cellPars_129', 'cellPars_131', 'fileName');
 
 
 %%
-hf = figure('Position', [2258 84 1021 868]);
+hf = figure('Position', [100 84 1021 868]);
 ax1 = subplot(2,2,1);
 ax2 = subplot(2,2,3);
 ax3 = subplot(2,2,2);

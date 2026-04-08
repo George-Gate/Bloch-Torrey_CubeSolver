@@ -31,6 +31,10 @@ neigs = 6;
 [coeff_mat, eigs_list, b_matrix] = solver.generate_coeff_matrix(B_A_chebfun3, basis_3D, cellPars, neigs); toc;
 [coeff_mat_tot, eigs_list_tot, b_matrix_tot] = solver.generate_coeff_matrix_with_btot(B_A_chebfun3, B_A_chebfun3/100, B_A_chebfun3/500, basis_3D, cellPars, neigs); toc;
 
+% calc. perturbation corrections
+ptb = solver.calc_perturbation_corrections(b_matrix, cellPars, basis_3D);
+ptb_with_btot = solver.calc_perturbation_corrections(b_matrix_tot.btot_matrix, cellPars, basis_3D);
+
 %
 figure();
 bar3(b_matrix);
@@ -66,6 +70,6 @@ pumpBeamProfile.yc = 0;
 circleMask = @(x,y,r) 1./((1+((x.*x+y.*y)/r^2).^20));  % 圆形通光孔    (#Translate# Circular aperture)
 pumpBeamProfile.aperture_mask = @(x,y)circleMask(x,y,0.5);     % 通光孔外形函数，通光区域为1，不通光区域为0      (#Translate# Aperture shape function. Returns 1 in the transmissive region and 0 in the blocking region.)
 
-I_max_list = unique([linspace(0, 2, 56), linspace(0, 0.3, 56)]);
+I_max_list = unique([linspace(0, 2, 16), linspace(0, 0.3, 16)]);
 
 result = solver.get_pump_power_dependence(I_max_list, pumpBeamProfile, cellPars_129, cellPars_131, true, 'beamShape', 'Gaussian');

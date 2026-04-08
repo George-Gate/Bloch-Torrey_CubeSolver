@@ -90,7 +90,7 @@ a3_mat = cell2mat(a3);
 
 
 % plot 
-hf = figure( Position = [89 136 2281 1008]);
+hf = figure( Position = [89 136 1900 1008]);
 axList{1} = subplot(1,2,1); hold on; box on; grid on;
 axList{2} = subplot(1,2,2); hold on; box on; grid on;
 

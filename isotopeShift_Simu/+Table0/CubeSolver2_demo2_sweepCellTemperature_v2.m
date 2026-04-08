@@ -35,7 +35,7 @@ pumpBeamProfile.yc = 0.10;
 pumpBeamProfile.I_max = 0.5;
 circleMask = @(x,y,r) 1./((1+((x.*x+y.*y)/r^2).^20));  % Ô²ÐÎÍ¨¹â¿×    (#Translate# Circular aperture)
 
-cellTemp_list = unique([linspace(100, 115, 2*56)]);
+cellTemp_list = unique([linspace(100, 115, 16)]);
 
 fileName = sprintf('sweepCellTemperature_v2 %s', datestr(now(),'yyyymmdd_HHMMSS'));
 
@@ -49,7 +49,7 @@ result = solver.get_cell_temperature_dependence_v2(cellTemp_list, pumpBeamProfil
 
 
 %% plot
-hf = figure('Position', [2258 84 1021 868]);
+hf = figure('Position', [100 84 1021 868]);
 ax1 = subplot(2,2,1);
 ax2 = subplot(2,2,3);
 ax3 = subplot(2,2,2);

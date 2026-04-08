@@ -3,9 +3,14 @@ function cfs = get_characteristic_functions_strongPump(w_L)
 % (#Translate# Compute various approximate analytic expressions in the strong pumping limit.)
 
 %     w_L = linspace(0,1.0,200);
+%     F1 = sqrt(2*pi)/3*w_L.^2 .* erf(1/2/sqrt(2)./w_L).*(    12*w_L.*exp(-1/8./w_L.^2) + sqrt(2*pi)*(1-12*w_L.^2).*erf(1/2/sqrt(2)./w_L)    );
+%     F2 = 2*pi/3*w_L.^2.*erf( 1/2/sqrt(2)./w_L ).^2;
+%     F3 = (  2*pi*w_L.^2 .*erf(1/2/sqrt(2)./w_L).^2  ).^3;
+%     F4 = 2*(  2*pi*w_L.^2 .*erf(1/2/sqrt(2)./w_L).^2  ).^2.*(pi*w_L.^2 .* exp(-4*pi^2*w_L.^2).*( erfz(1/2/sqrt(2)./w_L + 1i*sqrt(2)*pi*w_L) + erfz(1/2/sqrt(2)./w_L - 1i*sqrt(2)*pi*w_L)  ).^2);
+    
     tmp_erfi = Erfi(1/2/sqrt(2)./w_L);
     F5 = -sqrt(2*pi)/3*w_L.^2  .*  tmp_erfi.*(  -12*w_L.*exp(1/8./w_L.^2)  + sqrt(2*pi)*(1+12*w_L.^2).*tmp_erfi    );
-
+    F7 = ( sqrt(2*pi).*w_L.*tmp_erfi ).^2;
 
     I00x2 = Ix2_fun(0,0); I00x2 = I00x2(w_L);
     % sum (n)
@@ -77,6 +82,7 @@ function cfs = get_characteristic_functions_strongPump(w_L)
     cfs.F5 = F5;
     cfs.F6 = F6;
     cfs.F6_approx = F6_approx;
+    cfs.F7 = F7;
 end
 
 % 给定 (m,p), 返回 近似解析表达式 函数 Impx2(w/L)。近似到 lambda 的零阶项

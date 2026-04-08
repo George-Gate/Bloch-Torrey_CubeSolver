@@ -78,7 +78,7 @@ bA1st_approx_strong_3 = base_ampl_strong*(cellPars_129.lambda(1) - cellPars_131.
                                                                             + (I_star./re.I_max_list).^2.*(  (1+OD/6*(2*OD-9)).*cfs_strong_3.F5 - OD.^2/90.*cfs_strong_3.F7 ));    % 强光极限近似（3阶）
 
 
-hf = figure('Position', [2258 342 1274 610]);
+hf = figure('Position', [100 342 1274 610]);
 ax1 = subplot(1,2,1);
 ax2 = subplot(1,2,2);
 
@@ -94,9 +94,9 @@ x_data = (re.I_max_list/I_star);
 plot(ax1, x_data, bA1st, 'k-', 'DisplayName', '$b_{\rm A}^{(1)}$'); hold(ax1, 'on'); grid(ax1, 'on');
 % plot(ax1,x_data, bA3rd, 'b-', 'DisplayName', '$b_{\rm A}^{(3)}$'); 
 plot(ax1, x_data, bA1st_approx_weak, 'm--', 'DisplayName', '$b_{\rm A}^{(1)}$ weak approx.');
-plot(ax1, x_data, bA1st_approx_strong, 'b--', 'DisplayName', '$b_{\rm A}^{(1)}$ strong approx.');
-plot(ax1, x_data, bA1st_approx_strong_2, 'r--', 'DisplayName', '$b_{\rm A}^{(1)}$ strong approx. 2');
-plot(ax1, x_data, bA1st_approx_strong_3, 'g--', 'DisplayName', '$b_{\rm A}^{(1)}$ strong approx. 3');
+plot(ax1, x_data, bA1st_approx_strong, 'b--', 'DisplayName', '$b_{\rm A}^{(1)}$ strong approx. up to 1st order');
+plot(ax1, x_data, bA1st_approx_strong_2, 'r--', 'DisplayName', '$b_{\rm A}^{(1)}$ strong approx. up to 2nd order');
+plot(ax1, x_data, bA1st_approx_strong_3, 'g--', 'DisplayName', '$b_{\rm A}^{(1)}$ strong approx. up to 3rd order');
 % plot(ax1, [1,1], minmax([bA1st(:);bA3rd(:)]'), 'k-.', 'DisplayName', '$I^* \equiv h \nu \Phi^*$');
 
 %复制 ax1, 然后放大

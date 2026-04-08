@@ -91,7 +91,7 @@ save([fileName '.mat'], 'result_Rrel', 'cellPars_129', 'cellPars_131', 'w_L_list
 
 
 %%
-hf = figure('Position', [667 377 1048 522]);
+hf = figure('Position', [100 377 1048 522]);
 ax1 = subplot(2,2,1);
 ax2 = subplot(2,2,3);
 ax3 = subplot(2,2,2);
