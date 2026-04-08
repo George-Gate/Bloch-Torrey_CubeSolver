@@ -1,6 +1,6 @@
-# Torrey-Bloch_CubeSolver
+# Bloch-Torrey_CubeSolver
 
-Solving the Torrey–Bloch equation in a cubic domain.
+Solving the Bloch-Torrey equation in a cubic domain.
 
 This repository contains the code accompanying the research article:
 
