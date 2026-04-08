@@ -1,7 +1,9 @@
 clear; clc;
 
 % 这里的数据文件应该跟 Fig4(b) 用的数据文件一致
+warning off;
 load(['dataSet' filesep 'sweepPumpPower' filesep 'sweepPumpPower 20250626_170731.mat']);   % numBasis = 100, Rrel=1/(100us), w/L=0.4
+warning on;
 
 %%
 gS = 2;

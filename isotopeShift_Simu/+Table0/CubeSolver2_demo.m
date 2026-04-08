@@ -20,7 +20,7 @@ basis_3D = Table0.CubeSolver2.generate_basis_3D(basis_x, basis_y, basis_z, 100, 
 % generate polarization field distribution
 w = 0.25*cellPars.L(1);
 I_max = 0.2;  
-I0_fun = @(x,y) I_max * exp( - (x.*x+y.*y) ./ (2*w*w)  );
+I0_fun = @(x,y) I_max * exp( - (x.*x+y.*y) ./ (2*w*w)  ); % in unit of W/cm^2
 
 circleMask = @(x,y,r) 1./((1+((x.*x+y.*y)/r^2).^20));    % Ô²ÐÎÍ¨¹â¿×    (#Translate# Circular aperture)
 [B_A_chebfun3, auxInfo] = solver.calc_polarization_field(I0_fun, cellPars, @(x,y)circleMask(x,y,0.3), true); toc;
