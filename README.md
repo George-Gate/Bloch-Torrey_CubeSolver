@@ -5,7 +5,9 @@ Solving the Bloch-Torrey equation in a cubic domain.
 
 This repository contains the code accompanying the research article:
 
-> "Systematic Errors from Inhomogeneous Alkali Polarization in NMR Gyroscopes and Comagnetometers"
+> "Systematic errors from inhomogeneous alkali-atom polarization in NMR gyroscopes and comagnetometers"
+> 
+> DOI: [10.1103/tf57-n616](https://doi.org/10.1103/tf57-n616)
 
 The main package is located in the `isotopeShift_Simu` folder, while the `figs` folder contains the code for calculating and plotting the figures presented in the article.
 
